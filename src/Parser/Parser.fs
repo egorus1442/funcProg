@@ -143,7 +143,7 @@ let parse tokens =
         | Token.RIGHT_CURLY::t -> List.rev acc, t
         | _ -> failwith "parse_ids ERROR: id was not found"
 
-    let keywords = ["var"; "func"; "print"; "if"; "else"; "for"; "while"; "read"; "write"]
+    let keywords = ["let"; "func"; "print"; "if"; "else"; "for"; "while"; "read"; "write"]
 
     let rec token_parser acc = function
         | [] -> List.rev acc, []
@@ -177,7 +177,7 @@ let parse tokens =
 
             match read_exprs with
             | Expr.BASEOP(op)::t -> token_parser (Expr.BASELIST([Expr.OPERATOR(op, t)])::acc) remaining_part
-            | Expr.BASE("var")::Expr.BASELIST([Expr.ID(id)])::Expr.BASE("=")::Expr.BASELIST(list)::[] ->
+            | Expr.BASE("let")::Expr.BASELIST([Expr.ID(id)])::Expr.BASE("=")::Expr.BASELIST(list)::[] ->
                 token_parser (Expr.BASELIST([Expr.VARIABLE(id, Expr.BASELIST(list))])::acc) remaining_part
 
             | Expr.BASE("func")::Expr.BASELIST([Expr.ID(id)])::(Expr.BASEARGLIST(args_list) as args)

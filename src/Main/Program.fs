@@ -24,8 +24,8 @@ let rec repl env =
         repl env
 
 let rec execute env (filename: string) =
-    if (not(Regex.IsMatch(filename, "^.*[.]gg$"))) then
-        printf("ERROR. Wrong extension\n")
+    if not(Regex.IsMatch(filename, "^.*[.]aoi$")) then
+        printf "ERROR. Wrong extension\n"
     else
         let lines = File.ReadAllLines(filename)
         let source = String.concat "" lines
@@ -41,7 +41,7 @@ let rec execute env (filename: string) =
 let main =
     let args = Environment.GetCommandLineArgs()
     if args.Length <> 2 then
-        printfn "For start: dotnet run [name of file].gg\n"
+        printfn "For start: dotnet run [name of file].aoi\n"
         1
     else
         execute env args[1]

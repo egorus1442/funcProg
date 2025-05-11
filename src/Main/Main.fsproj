@@ -8,9 +8,6 @@
 
   <ItemGroup>
     <Compile Include="Program.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Parser\Parser.fsproj" />
     <ProjectReference Include="..\Interpretator\Interpretator.fsproj" />
   </ItemGroup>

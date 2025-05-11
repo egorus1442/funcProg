@@ -44,7 +44,7 @@
 			"patterns": [
 				{
 					"name": "storage.type.variables.aoi",
-					"match": "\\b(var|set|func)\\b"
+					"match": "\\b(let|set|func)\\b"
 				}
 			]
 		},

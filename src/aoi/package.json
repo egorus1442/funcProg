@@ -1,0 +1,36 @@
+{
+  "name": "aoi",
+  "displayName": "Aoi",
+  "description": "Aoi language support",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "aoi",
+        "aliases": [
+          "aoi"
+        ],
+        "extensions": [
+          ".aoi"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "aoi",
+        "scopeName": "source.aoi",
+        "path": "./syntaxes/aoi.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.3.2"
+  }
+}

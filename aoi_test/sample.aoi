@@ -82,3 +82,4 @@
 (print (fact 5))
 
 (print(read "./test.txt"))
+(write "./output.txt" "aoi file write text")
